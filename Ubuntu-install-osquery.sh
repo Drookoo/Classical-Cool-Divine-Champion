@@ -9,3 +9,4 @@ sudo apt-get install osquery -y
 # $ osqueryi
 # $ select username from users;
 
+
