@@ -6,8 +6,8 @@
 # sudo apt-get install osquery -y 
 
 
-wget https://pkg.osquery.io/linux/osquery-4.0.2_1.linux_x86_64.tar.gz
-sudo dpkg -i osquery-4.0.2_1.linux_x86_64.tar.gz
+wget https://pkg.osquery.io/deb/osquery_4.0.2_1.linux.amd64.deb
+sudo dpkg -i osquery_4.0.2_1.linux.amd64.deb
 # To open osquery shell
 # $ osqueryi
 # $ select username from users;
