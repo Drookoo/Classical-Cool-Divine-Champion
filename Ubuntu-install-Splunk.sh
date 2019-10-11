@@ -1,5 +1,7 @@
 #/bin/bash 
 
+# Splunk Enterprise .deb: https://wfs.pace.edu/browse/LolUnH_KB0CdLHap3f3gHw/
+# Splunk UFW .deb: https://wfs.pace.edu/browse/anPMcWByl0eNoRn01ReEcw/
 
 # Splunk Enterprise
 sudo apt-get install python3-pip -y 
