@@ -1,4 +1,5 @@
 #/bin/bash 
+#Ubuntumaridb 
 
 # Splunk Enterprise .deb: https://wfs.pace.edu/browse/LolUnH_KB0CdLHap3f3gHw/
 # Splunk UFW .deb: https://wfs.pace.edu/browse/jDa9Ah_KAkKMy8UjfguzRA/
@@ -18,8 +19,9 @@
 wget -O splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=7.3.2&product=universalforwarder&filename=splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb&wget=true'
 sudo dpkg -i splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb
 cd /opt/splunkforwarder/bin 
+sudo ./splunk start --accept-license 
 sudo ./splunk enable boot-start
-sudo ./splunk add forward-server 10.0.2.12:9997
+sudo ./splunk add forward-server 172.16.1.52:9997 -auth ccdc:$uperccdc2019
 sudo ./splunk add monitor /var/log
 sudo ./splunk restart
 
