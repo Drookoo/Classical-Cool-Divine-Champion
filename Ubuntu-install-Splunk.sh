@@ -1,7 +1,9 @@
 #/bin/bash 
 
 # Splunk Enterprise .deb: https://wfs.pace.edu/browse/LolUnH_KB0CdLHap3f3gHw/
-# Splunk UFW .deb: https://wfs.pace.edu/browse/anPMcWByl0eNoRn01ReEcw/
+# Splunk UFW .deb: https://wfs.pace.edu/browse/jDa9Ah_KAkKMy8UjfguzRA/
+# SPlunk uFW. deb: 
+#wget -O splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=7.3.2&product=universalforwarder&filename=splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb&wget=true'
 
 # Splunk Enterprise
 # sudo apt-get install python3-pip -y 
@@ -16,11 +18,16 @@
 #mkdir /home/ccdc/temp
 # cd /home/ccdc/temp
 #gdown https://drive.google.com/uc?id=1ss91UuvAd8o73K2Fqtjj0Hzvdx14RdFk
-wget https://wfs.pace.edu/browse/uIYoP2juAUmr7jYNP5nN6Q/
-sudo dpkg -i Ubuntu-splunkforwarder-7.3.1.1-7651b7244cf2-linux-2.6-amd64.deb
+#wget https://wfs.pace.edu/browse/uIYoP2juAUmr7jYNP5nN6Q/
+#sudo dpkg -i Ubuntu-splunkforwarder-7.3.1.1-7651b7244cf2-linux-2.6-amd64.deb
 
 # Configure Splunk Enterprise 
-cd /opt/splunk/bin/
-sudo ./splunk enable boot-start
+#cd /opt/splunk/bin/
+#sudo ./splunk enable boot-start
 #follow prompts, do things 
-sudo service splunk start
+#sudo service splunk start
+
+
+wget -O splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=7.3.2&product=universalforwarder&filename=splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb&wget=true'
+
+#configure splunk enterprise to recieve data on port 9997
