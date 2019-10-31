@@ -15,15 +15,5 @@ sudo dpkg -i osquery_4.0.2_1.linux.amd64.deb
 # $ select username from users;
 
 
-#### testme #####
-
-# in inputs.conf 
-echo -e "[monitor:///var/log/osquery/osqueryd.results.log]\nindex = main\nsourcetype = osquery_results\n\n[monitor:///var/log/osquery/osqueryd.*INFO*]\nindex = main\nsourcetype = osquery_info\n\n" >> inputs.conf
-
-echo -e "[monitor:///var/log/osquery/osqueryd.*ERROR*]\nindex = main\nsourcetype = osquery_error\n\n" >> inputs.conf
-
-echo -e "[monitor:///var/log/osquery/osqueryd.*WARNING*]\nindex = main\nsourcetype = osquery_warning\n\n"
-
-
 
 

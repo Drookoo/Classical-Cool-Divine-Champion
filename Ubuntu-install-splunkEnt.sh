@@ -1,4 +1,4 @@
-#/bin/bash 
+#!/bin/bash
 #Ubuntu apache2
 
 # Splunk Enterprise .deb: https://wfs.pace.edu/browse/LolUnH_KB0CdLHap3f3gHw/

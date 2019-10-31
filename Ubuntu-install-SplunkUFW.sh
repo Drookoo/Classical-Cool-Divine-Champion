@@ -1,4 +1,4 @@
-#/bin/bash 
+#!/bin/bash
 #Ubuntumaridb 
 
 # Splunk Enterprise .deb: https://wfs.pace.edu/browse/LolUnH_KB0CdLHap3f3gHw/
@@ -23,6 +23,7 @@ sudo ./splunk start --accept-license
 sudo ./splunk enable boot-start
 sudo ./splunk add forward-server 172.16.1.52:9997 -auth ccdc:$uperccdc2019
 sudo ./splunk add monitor /var/log
+# sudo .splunk add monitor /var/log/osquery/
 sudo ./splunk restart
 
 
@@ -33,5 +34,17 @@ sudo ./splunk restart
 #sudo service splunk start
 #configure splunk enterprise to recieve data on port 9997
 
+#### testme #####
+
+# in inputs.conf (find where this is located in /opt/splunk) 
+echo -e "[monitor:///var/log/osquery/osqueryd.results.log]\nindex = main\nsourcetype = osquery_results\n\n[monitor:///var/log/osquery/osqueryd.*INFO*]\nindex = main\nsourcetype = osquery_info\n\n" >> inputs.conf
+
+echo -e "[monitor:///var/log/osquery/osqueryd.*ERROR*]\nindex = main\nsourcetype = osquery_error\n\n" >> inputs.conf
+
+echo -e "[monitor:///var/log/osquery/osqueryd.*WARNING*]\nindex = main\nsourcetype = osquery_warning\n\n" >> inputs.conf
+
+
+# To install kolide fleet, recommended to put this on ubuntu 
+# https://jordanpotti.com/2018/02/16/elk-osquery-kolide-fleet-love/ 
 
 
