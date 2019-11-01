@@ -1,8 +1,6 @@
 #!/bin/bash
 #Ubuntumaridb 
 
-# Splunk Enterprise .deb: https://wfs.pace.edu/browse/LolUnH_KB0CdLHap3f3gHw/
-# Splunk UFW .deb: https://wfs.pace.edu/browse/jDa9Ah_KAkKMy8UjfguzRA/
 # SPlunk uFW. deb: 
 #wget -O splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb 'https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=7.3.2&product=universalforwarder&filename=splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb&wget=true'
 
