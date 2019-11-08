@@ -19,9 +19,10 @@ sudo dpkg -i splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb
 cd /opt/splunkforwarder/bin 
 sudo ./splunk start --accept-license 
 sudo ./splunk enable boot-start
-sudo ./splunk add forward-server 172.16.1.55:9997 -auth ccdc:$uperccdc2019
+sudo ./splunk add forward-server 172.16.1.55:9997 
+cd /opt/splunkforwarder/bin 
 sudo ./splunk add monitor /var/log
-sudo .splunk add monitor /etc/
+sudo ./splunk add monitor /etc/
 
 
 ## Cron
@@ -47,62 +48,62 @@ sudo .splunk add monitor /etc/
         # \::/    /                \:|   |                   ~~                      \::/    /        
          # \/____/                  \|___|                                            \/____/         
                                                                                                     
-sudo .splunk add monitor /etc/cron.allow
-sudo .splunk add monitor /etc/cron.deny 
-sudo .splunk add monitor /etc/cron.d 
-sudo .splunk add monitor /etc/cron.daily 
-sudo .splunk add monitor /etc/cron.hourly 
-sudo .splunk add monitor /etc/cron.hourly 
-sudo .splunk add monitor /etc/cron.monthly
-sudo .splunk add monitor /etc/crontab 
+sudo ./splunk add monitor /etc/cron.allow
+sudo ./splunk add monitor /etc/cron.deny 
+sudo ./splunk add monitor /etc/cron.d 
+sudo ./splunk add monitor /etc/cron.daily 
+sudo ./splunk add monitor /etc/cron.hourly 
+sudo ./splunk add monitor /etc/cron.hourly 
+sudo ./splunk add monitor /etc/cron.monthly
+sudo ./splunk add monitor /etc/crontab 
 
 ## System Startup
-sudo .splunk add monitor /etc/inittab 
-sudo .splunk add monitor /etc/init.d
-sudo .splunk add monitor /etc/init 
+sudo ./splunk add monitor /etc/inittab 
+sudo ./splunk add monitor /etc/init.d
+sudo ./splunk add monitor /etc/init 
 
 ## Install packages 
-sudo .splunk add monitor /usr/bin/rpm 
-sudo .splunk add monitor /usr/bin/yum 
-sudo .splunk add monitor /bin/rpm 
-sudo .splunk add monitor /usr/bin/dpkg 
-sudo .splunk add monitor /usr/bin/apt-add-repository 
-sudo .splunk add monitor /usr/bin/apt-get 
-sudo .splunk add monitor /usr/bin/aptitude 
+sudo ./splunk add monitor /usr/bin/rpm 
+sudo ./splunk add monitor /usr/bin/yum 
+sudo ./splunk add monitor /bin/rpm 
+sudo ./splunk add monitor /usr/bin/dpkg 
+sudo ./splunk add monitor /usr/bin/apt-add-repository 
+sudo ./splunk add monitor /usr/bin/apt-get 
+sudo ./splunk add monitor /usr/bin/aptitude 
 
 ## Suspicious activity 
-sudo .splunk add monitor /usr/bin/wget
-sudo .splunk add monitor /usr/bin/curl 
-sudo .splunk add monitor /usr/bin/base64 
-sudo .splunk add monitor /bin/nc 
-sudo .splunk add monitor /bin/netcat 
-sudo .splunk add monitor /usr/bin/ncat 
-sudo .splunk add monitor /usr/bin/ssh 
-sudo .splunk add monitor /usr/bin/socat 
-sudo .splunk add monitor /usr/bin/socat 
-sudo .splunk add monitor /usr/bin/wireshark 
-sudo .splunk add monitor /usr/bin/rawshark
-sudo .splunk add monitor /usr/bin/rdesktop 
-sudo .splunk add monitor /sbin/iptables 
-sudo .splunk add monitor /sbin/ifconfig 
-sudo .splunk add monitor /usr/sbin/tcpdump 
-sudo .splunk add monitor /usr/sbin/traceroute 
+sudo ./splunk add monitor /usr/bin/wget
+sudo ./splunk add monitor /usr/bin/curl 
+sudo ./splunk add monitor /usr/bin/base64 
+sudo ./splunk add monitor /bin/nc 
+sudo ./splunk add monitor /bin/netcat 
+sudo ./splunk add monitor /usr/bin/ncat 
+sudo ./splunk add monitor /usr/bin/ssh 
+sudo ./splunk add monitor /usr/bin/socat 
+sudo ./splunk add monitor /usr/bin/socat 
+sudo ./splunk add monitor /usr/bin/wireshark 
+sudo ./splunk add monitor /usr/bin/rawshark
+sudo ./splunk add monitor /usr/bin/rdesktop 
+sudo ./splunk add monitor /sbin/iptables 
+sudo ./splunk add monitor /sbin/ifconfig 
+sudo ./splunk add monitor /usr/sbin/tcpdump 
+sudo ./splunk add monitor /usr/sbin/traceroute 
 
 ## Process ID changes 
-sudo .splunk add monitor /bin/su 
-sudo .splunk add monitor /usr/bin/sudo 
-sudo .splunk add monitor /etc/sudoers
+sudo ./splunk add monitor /bin/su 
+sudo ./splunk add monitor /usr/bin/sudo 
+sudo ./splunk add monitor /etc/sudoers
 
 ## Powerstate changes 
-sudo .splunk add monitor /sbin/shutdown 
-sudo .splunk add monitor /sbin/poweroff 
-sudo .splunk add monitor /sbin/reboot 
-sudo .splunk add monitor /sbin/halt 
+sudo ./splunk add monitor /sbin/shutdown 
+sudo ./splunk add monitor /sbin/poweroff 
+sudo ./splunk add monitor /sbin/reboot 
+sudo ./splunk add monitor /sbin/halt 
 
 ## Session initiation information 
-sudo .splunk add monitor /var/run/utmp 
-sudo .splunk add monitor /var/log/btmp 
-sudo .splunk add monitor /var/log/wtmp 
+sudo ./splunk add monitor /var/run/utmp 
+sudo ./splunk add monitor /var/log/btmp 
+sudo ./splunk add monitor /var/log/wtmp 
 
 ## Recon 
          # /\    \                  /\    \                  /\    \                 /::\    \                 /\    \         
@@ -126,53 +127,45 @@ sudo .splunk add monitor /var/log/wtmp
         # \:|   |                  \::/    /                \::/    /                 ~~                      \::/    /        
          # \|___|                   \/____/                  \/____/                                           \/____/         
                                                                                                                              
-sudo .splunk add monitor /usr/bin/whoami 
-sudo .splunk add monitor /etc/issue
-sudo .splunk add monitor /etc/hostname 
+sudo ./splunk add monitor /usr/bin/whoami 
+sudo ./splunk add monitor /etc/issue
+sudo ./splunk add monitor /etc/hostname 
 
-sudo .splunk add monitor /usr/bin/passwd
-sudo .splunk add monitor /bin/su 
-sudo .splunk add monitor /usr/bin/stunnel 
-sudo .splunk add monitor /usr/bin/passwd 
+sudo ./splunk add monitor /usr/bin/passwd
+sudo ./splunk add monitor /bin/su 
+sudo ./splunk add monitor /usr/bin/stunnel 
+sudo ./splunk add monitor /usr/bin/passwd 
 
 ## Tools to change group identifiers 
-sudo .splunk add monitor /usr/sbin/groupadd 
-sudo .splunk add monitor /usr/sbin/groupmod 
-sudo .splunk add monitor /usr/sbin/addgroup 
-sudo .splunk add monitor /usr/sbin/useradd 
-sudo .splunk add monitor /usr/sbin/usermod 
-sudo .splunk add monitor /usr/sbin/adduser 
+sudo ./splunk add monitor /usr/sbin/groupadd 
+sudo ./splunk add monitor /usr/sbin/groupmod 
+sudo ./splunk add monitor /usr/sbin/addgroup 
+sudo ./splunk add monitor /usr/sbin/useradd 
+sudo ./splunk add monitor /usr/sbin/usermod 
+sudo ./splunk add monitor /usr/sbin/adduser 
 
 ## Login configuration and information 
-sudo .splunk add monitor /etc/login.defs 
-sudo .splunk add monitor /etc/securetty 
-sudo .splunk add monitor /var/log/faillog 
-sudo .splunk add monitor /var/log/lastlog
-sudo .splunk add monitor /var/log/tallylog
+sudo ./splunk add monitor /etc/login.defs 
+sudo ./splunk add monitor /etc/securetty 
+sudo ./splunk add monitor /var/log/faillog 
+sudo ./splunk add monitor /var/log/lastlog
+sudo ./splunk add monitor /var/log/tallylog
 
 ## User, groups, password DBs 
-sudo .splunk add monitor /etc/group 
-sudo .splunk add monitor /etc/passwd
-sudo .splunk add monitor /etc/gshadow 
-sudo .splunk add monitor /etc/shadow 
-sudo .splunk add monitor /etc/security/opasswd 
+sudo ./splunk add monitor /etc/group 
+sudo ./splunk add monitor /etc/passwd
+sudo ./splunk add monitor /etc/gshadow 
+sudo ./splunk add monitor /etc/shadow 
+sudo ./splunk add monitor /etc/security/opasswd 
 
 
 # sudo .splunk add monitor /var/log/osquery/
 sudo ./splunk restart
 
-
-# Configure Splunk Enterprise 
-#cd /opt/splunk/bin/
-#sudo ./splunk enable boot-start
-#follow prompts, do things 
-#sudo service splunk start
-#configure splunk enterprise to recieve data on port 9997
-
 #### testme #####
 
 # in inputs.conf (find where this is located in /opt/splunk) 
-cd /opt/splunk/etc/system/local 
+cd /opt/splunkforwarder/etc/system/local 
 echo -e "[monitor:///var/log/osquery/osqueryd.results.log]\nindex = main\nsourcetype = osquery_results\n\n[monitor:///var/log/osquery/osqueryd.*INFO*]\nindex = main\nsourcetype = osquery_info\n\n" >> inputs.conf
 
 echo -e "[monitor:///var/log/osquery/osqueryd.*ERROR*]\nindex = main\nsourcetype = osquery_error\n\n" >> inputs.conf

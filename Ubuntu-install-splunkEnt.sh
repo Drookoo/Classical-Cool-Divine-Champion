@@ -15,6 +15,11 @@ sudo ./splunk enable boot-start
 
 sudo ./splunk enable listen 9997 -auth ccdc:$uperccdc2019
 
+
+sudo ./splunk add monitor /var/log
+sudo ./splunk add monitor /etc/
+
+
 sudo ./splunk restart 
 #follow prompts, do things 
 #sudo service splunk start

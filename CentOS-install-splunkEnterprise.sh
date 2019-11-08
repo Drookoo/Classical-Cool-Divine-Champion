@@ -21,6 +21,9 @@ echo -e "[monitor:///var/log/osquery/osqueryd.*WARNING*]\nindex = main\nsourcety
 
 cd /opt/splunk/bin/
 
+sudo ./splunk add monitor /var/log
+sudo ./splunk add monitor /etc/
+
 sudo ./splunk restart 
 
 
