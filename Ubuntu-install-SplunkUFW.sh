@@ -19,7 +19,7 @@ sudo dpkg -i splunkforwarder-7.3.2-c60db69f8e32-linux-2.6-amd64.deb
 cd /opt/splunkforwarder/bin 
 sudo ./splunk start --accept-license 
 sudo ./splunk enable boot-start
-sudo ./splunk add forward-server 172.16.1.52:9997 -auth ccdc:$uperccdc2019
+sudo ./splunk add forward-server 172.16.1.55:9997 -auth ccdc:$uperccdc2019
 sudo ./splunk add monitor /var/log
 sudo .splunk add monitor /etc/
 
