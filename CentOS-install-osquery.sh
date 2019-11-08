@@ -1,7 +1,11 @@
 #!/bin/bash
 
-sudo curl -L https://pkg.osquery.io/rpm/GPG | sudo tee /etc/pki/rpm-gpg/RPM-GPG-KEY-osquery
-sudo yum-config-manager --add-repo https://pkg.osquery.io/rpm/osquery-s3-rpm.repo
-sudo yum-config-manager --enable osquery-s3-rpm
-sudo yum install osquery -y
+# sudo yum install htop -y 
 
+#also works as one line
+rpm -i https://pkg.osquery.io/rpm/osquery-4.0.2-1.linux.x86_64.rpm 
+
+firewall-cmd --zone=public --add-port=8000/tcp --permanent 
+firewall-cmd --zone=public --add-port=9997/tcp --permanent 
+firewall-cmd --zone=public --add-port=8089/tcp --permanent 
+firewall-cmd --reload

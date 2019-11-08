@@ -172,6 +172,7 @@ sudo ./splunk restart
 #### testme #####
 
 # in inputs.conf (find where this is located in /opt/splunk) 
+cd /opt/splunk/etc/system/local 
 echo -e "[monitor:///var/log/osquery/osqueryd.results.log]\nindex = main\nsourcetype = osquery_results\n\n[monitor:///var/log/osquery/osqueryd.*INFO*]\nindex = main\nsourcetype = osquery_info\n\n" >> inputs.conf
 
 echo -e "[monitor:///var/log/osquery/osqueryd.*ERROR*]\nindex = main\nsourcetype = osquery_error\n\n" >> inputs.conf

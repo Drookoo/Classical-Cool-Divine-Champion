@@ -14,6 +14,10 @@ sudo dpkg -i osquery_4.0.2_1.linux.amd64.deb
 # $ osqueryi
 # $ select username from users;
 
+# OSQUERY cheatsheet
+# https://defensivedepth.files.wordpress.com/2018/10/osquery-handout.pdf 
+
+#use fking htop LOL
 
 
 
