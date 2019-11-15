@@ -166,7 +166,9 @@ sudo ./splunk restart
 
 # in inputs.conf (find where this is located in /opt/splunk) 
 cd /opt/splunkforwarder/etc/system/local 
-echo -e "[monitor:///var/log/osquery/osqueryd.results.log]\nindex = main\nsourcetype = osquery_results\n\n[monitor:///var/log/osquery/osqueryd.*INFO*]\nindex = main\nsourcetype = osquery_info\n\n" >> inputs.conf
+echo -e "[monitor:///var/log/osquery/osqueryd.results.log]\nindex = main\nsourcetype = osquery_results\n\n" >> inputs.conf
+
+echo -e "[monitor:///var/log/osquery/osqueryd.*INFO*]\nindex = main\nsourcetype = osquery_info\n\n" >> inputs.conf
 
 echo -e "[monitor:///var/log/osquery/osqueryd.*ERROR*]\nindex = main\nsourcetype = osquery_error\n\n" >> inputs.conf
 
@@ -176,4 +178,12 @@ echo -e "[monitor:///var/log/osquery/osqueryd.*WARNING*]\nindex = main\nsourcety
 # To install kolide fleet, recommended to put this on ubuntu 
 # https://jordanpotti.com/2018/02/16/elk-osquery-kolide-fleet-love/ 
 
+
+# more osquery logging conf 
+cd /etc/osquery/
+# create file named "osquery.conf"
+# populate it like so
+
+#sudo osqueryctl stop 
+#sudo osqueryctl start
 

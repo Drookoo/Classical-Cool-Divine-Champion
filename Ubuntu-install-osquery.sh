@@ -19,5 +19,26 @@ sudo dpkg -i osquery_4.0.2_1.linux.amd64.deb
 
 #use fking htop LOL
 
+#populate /etc/osquery/osquery.conf 
+# {
+  # "options": {
+    # "host_identifier": "hostname",
+    # "schedule_splay_percent": 10
+  # },
+  # "schedule": {
+    # "macos_kextstat": {
+      # "query": "SELECT * FROM kernel_extensions;",
+      # "interval": 10
+    # },
+    # "foobar": {
+      # "query": "SELECT foo, bar, pid FROM foobar_table;",
+      # "interval": 600
+    # }
+  # }
+# }
+
+#sudo osqueryctl stop 
+#sudo osqueryctl start
+
 
 
