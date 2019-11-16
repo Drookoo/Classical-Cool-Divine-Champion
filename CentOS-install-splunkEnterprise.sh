@@ -30,4 +30,7 @@ sudo ./splunk restart
 
 firewall-cmd --zone=public --add-port=8000/tcp --permanent 
 firewall-cmd --zone=public --add-port=9997/tcp --permanent 
+
+# for syslog, ask alexs about it 
+firewall-cmd --zone=public --add-port=514/udp --permanent 
 firewall-cmd --reload 
