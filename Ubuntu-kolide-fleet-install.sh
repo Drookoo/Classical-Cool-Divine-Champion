@@ -19,3 +19,10 @@ sudo redis-server &
 
 #check if redis is running 
 systemctl status redis 
+
+
+# https://github.com/kolide/fleet/blob/master/docs/infrastructure/installing-fleet.md
+
+# use a config file from:
+#https://github.com/kolide/fleet/blob/master/docs/infrastructure/configuring-the-fleet-binary.md
+
