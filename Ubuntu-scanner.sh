@@ -17,8 +17,9 @@ case "$answer" in
 	sudo mkdir /tmp/nmap_scans
 	echo "Prereqs installed" ;;
 2) echo -e "Enter the host or range of ips for target \c"
-    read "$host" 
-	sudo nmap -sn $host -oX /tmp/nmap_scans/fast_scan/nmap_$date.xml;;
+    read host 
+	sudo nmap -sn "$host" -oX /tmp/nmap_scans/fast_scan/nmap_"$(date +"%Y-%m-%d_%H-%M-%S")".xml 
+	;;
 3) cal ;;
 q) exit ;; 
 esac 
