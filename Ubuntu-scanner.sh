@@ -1,6 +1,10 @@
 #!/bin/bash 
 
-Ubuntu Scan 
+# Ubuntu Scan
+
+# TODO: determine why the script doesn't write to other folders
+# TODO: Test this on environment, single IP, range of IPs, etc.  
+
 
 echo "================================"
 echo "Ubuntu Scanner Menu" 
@@ -18,8 +22,13 @@ case "$answer" in
 	echo "Prereqs installed" ;;
 2) echo -e "Enter the host or range of ips for target \c"
     read host 
-	$(sudo nmap -sn "$host" -oX /tmp/nmap_scans/fast_scan/nmap_"$(date +"%Y-%m-%d_%H-%M-%S")".xml) 
+	sudo nmap -sn "$host" -oX fast_nmap_"$(date +"%Y-%m-%d_%H-%M-%S")".xml \
+	&& sudo xsltproc "$(ls -Art | tail -n 1)" -o "$(ls -Art | tail -n 1)".html
 	;;
-3) cal ;;
+3) echo -e "Enter the host or range of ips for target \c"
+	read host 
+	sudo nmap -A -T4 "$host" -oX slow_nmap_"$(date +"%Y-%m-%d_%H-%M-%S")".xml \
+	&& sudo xsltproc "$(ls -Art | tail -n 1)" -o "$(ls -Art | tail -n 1)".html
+	;;
 q) exit ;; 
 esac 
