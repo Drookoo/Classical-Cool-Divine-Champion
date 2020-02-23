@@ -6,6 +6,9 @@ echo "================================"
 echo "Enter 1 to install Splunk UFW: (1)"
 echo "Enter 2 to install Splunk Enterprise: (2)"
 echo "Enter 3 to install osquery: (3)" 
+echo "Enter 4 to install Docker: (4)"
+echo "Enter 5 to install Vuls.io (requires Docker): (5)"
+echo "Enter 6 to install : (6)"
 echo "Enter q to exit the menu q:"
 echo -e "\n"
 echo -e "Enter your selection \c"
@@ -32,5 +35,23 @@ case "$answer" in
 	echo "OSquery installed" 
 	echo "================================"
 	;;
+4)sudo apt-get update
+	sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common -y
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+	sudo apt-get update 
+	sudo apt-get install docker-ce docker-ce-cli containerd.io
+	echo "================================"
+	echo "Docker installed" 
+	echo "================================"
+	;;	
+5) sudo systemctl start docker 
+	git clone https://github.com/vulsio/vulsctl.git 
+	sudo ./vulsctl/update-all.sh 
+	echo "================================"
+	echo "Docker installed" 
+	echo "================================"
+	;;
+6) ;;
 q) exit ;;
 esac
