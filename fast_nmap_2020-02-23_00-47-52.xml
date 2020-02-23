@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.60 scan initiated Sun Feb 23 00:47:52 2020 as: nmap -sn -oX fast_nmap_2020-02-23_00-47-52.xml 10.0.2.15 -->
+<nmaprun scanner="nmap" args="nmap -sn -oX fast_nmap_2020-02-23_00-47-52.xml 10.0.2.15" start="1582418872" startstr="Sun Feb 23 00:47:52 2020" version="7.60" xmloutputversion="1.04">
+<verbose level="0"/>
+<debugging level="0"/>
+<host><status state="up" reason="localhost-response" reason_ttl="0"/>
+<address addr="10.0.2.15" addrtype="ipv4"/>
+<hostnames>
+<hostname name="ubuntu-server" type="PTR"/>
+</hostnames>
+</host>
+<runstats><finished time="1582418872" timestr="Sun Feb 23 00:47:52 2020" elapsed="0.00" summary="Nmap done at Sun Feb 23 00:47:52 2020; 1 IP address (1 host up) scanned in 0.00 seconds" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
