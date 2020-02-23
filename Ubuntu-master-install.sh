@@ -32,3 +32,5 @@ case "$answer" in
 	echo "OSquery installed" 
 	echo "================================"
 	;;
+q) exit ;;
+esac
