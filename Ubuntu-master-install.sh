@@ -64,6 +64,8 @@ case "$answer" in
 	sudo greenbone-certdata-sync
 	sudo systemctl restart openvas-scanner
 	sudo openvasmd --rebuild --progress
+	echo "openvas installed" 
+	echo "https://Server-Ip:4000 admin:admin"
 	;;
 q) exit ;;
 esac
