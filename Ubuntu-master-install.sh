@@ -8,7 +8,7 @@ echo "Enter 2 to install Splunk Enterprise: (2)"
 echo "Enter 3 to install osquery: (3)" 
 echo "Enter 4 to install Docker: (4)"
 echo "Enter 5 to install Vuls.io (requires Docker): (5)"
-echo "Enter 6 to install : (6)"
+echo "Enter 6 to install openvas: (6)"
 echo "Enter q to exit the menu q:"
 echo -e "\n"
 echo -e "Enter your selection \c"
@@ -52,6 +52,18 @@ case "$answer" in
 	echo "Docker installed" 
 	echo "================================"
 	;;
-6) ;;
+6) sudo add-apt-repository ppa:mrazavi/openvas
+	sudo apt-get update
+	sudo apt-get install sqlite3
+	sudo apt-get install openvas9 -y 
+	sudo apt-get install texlive-latex-extra --no-install-recommends -y
+	sudo apt-get install textlive-fonts-recommended -y
+	sudo apt-get install libopenvas9-dev
+	sudo greenbone-nvt-sync
+	sudo greenbone-scapdata-sync
+	sudo greenbone-certdata-sync
+	sudo systemctl restart openvas-scanner
+	sudo openvasmd --rebuild --progress
+	;;
 q) exit ;;
 esac
