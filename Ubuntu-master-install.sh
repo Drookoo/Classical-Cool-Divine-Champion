@@ -9,6 +9,7 @@ echo "Enter 3 to install osquery: (3)"
 echo "Enter 4 to install Docker: (4)"
 echo "Enter 5 to install Vuls.io (requires Docker): (5)"
 echo "Enter 6 to install openvas: (6)"
+echo "Enter 7 to install Artillery: (7)"
 echo "Enter q to exit the menu q:"
 echo -e "\n"
 echo -e "Enter your selection \c"
@@ -67,5 +68,13 @@ case "$answer" in
 	echo "openvas installed" 
 	echo "https://Server-Ip:4000 admin:admin"
 	;;
+7) sudo git clone https://github.com/BinaryDefense/artillery.git 
+	sudo ./artillery/setup.py -y 
+	echo "Setting Iptable rules for artillery"
+    for port in 22 1433 8080 21 5900 53 110 1723 1337 10000 5800 44443 16993; do
+      echo "iptables -A INPUT -p tcp -m tcp --dport $port -j ACCEPT" >> /etc/init.d/iptables.sh
+    done
+	echo "Artillery installed"
+	echo "Reboot me" 
 q) exit ;;
 esac
