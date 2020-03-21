@@ -4,7 +4,7 @@
 
 # TODO: determine why the script doesn't write to other folders
 # TODO: Test this on environment, single IP, range of IPs, etc.  
-
+# yaasss
 
 echo "================================"
 echo "Ubuntu Scanner Menu" 
